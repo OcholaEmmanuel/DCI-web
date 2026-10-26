@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directorate of Criminal Investigations (DCI) - Kenya Portal</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <i data-lucide="shield"></i>
+        <div class="brand-text">
+          <span class="brand-title">DCI KENYA</span>
+          <span class="brand-sub">Directorate of Criminal Investigations</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#overview" class="active"><i data-lucide="home"></i> Mandate</a>
+        <a href="#directorates"><i data-lucide="layers"></i> Directorates & Units</a>
+        <a href="#workflow"><i data-lucide="git-merge"></i> Case Workflow</a>
+        <a href="#services"><i data-lucide="briefcase"></i> e-Services</a>
+      </nav>
+      <div class="emergency-badge">
+        <i data-lucide="phone-call"></i>
+        <span>HOTLINE: 0800 722 203</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="overview">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="badge">Mazingira Complex • Kiambu Road</div>
+      <h1>Investigative Excellence for National Security</h1>
+      <p>
+        Operating under Article 247 of the Constitution and Section 35 of the National Police Service Act, 
+        the Directorate of Criminal Investigations delivers specialized crime detection, scientific forensics, 
+        and intelligence-led criminal investigations across Kenya.
+      </p>
+      <div class="hero-actions">
+        <a href="#workflow" class="btn btn-primary"><i data-lucide="search"></i> Explore Investigation Pipeline</a>
+        <a href="#services" class="btn btn-secondary"><i data-lucide="file-check"></i> Verify Good Conduct</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Mandate Statistics Grid -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <i data-lucide="shield-alert"></i>
+        <div class="stat-number">47</div>
+        <div class="stat-label">County Commands (CCIO)</div>
+      </div>
+      <div class="stat-card">
+        <i data-lucide="microscope"></i>
+        <div class="stat-number">10+</div>
+        <div class="stat-label">Forensic Lab Divisions</div>
+      </div>
+      <div class="stat-card">
+        <i data-lucide="globe-2"></i>
+        <div class="stat-number">INTERPOL</div>
+        <div class="stat-label">NCB Bureau Nairobi</div>
+      </div>
+      <div class="stat-card">
+        <i data-lucide="cpu"></i>
+        <div class="stat-number">24/7</div>
+        <div class="stat-label">CRIB Intelligence Mapping</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Portal Layout -->
+  <div class="container main-layout">
+
+    <!-- Section: Directorates & Specialized Units -->
+    <section id="directorates" class="portal-section">
+      <div class="section-header">
+        <h2>Specialized Units & Directorates</h2>
+        <p>Explore the operational command structure and specialized tactical divisions of the DCI.</p>
+      </div>
+
+      <div class="search-filter-bar">
+        <div class="search-input-wrapper">
+          <i data-lucide="search"></i>
+          <input type="text" id="unit-search" placeholder="Search unit by name, keyword, or function (e.g., Cyber, ATPU, DNA)...">
+        </div>
+      </div>
+
+      <div class="grid-layout" id="units-grid">
+        <!-- Dynamically Rendered by script.js -->
+      </div>
+    </section>
+
+    <!-- Section: Step-by-Step Investigation Workflow Visualizer -->
+    <section id="workflow" class="portal-section">
+      <div class="section-header">
+        <h2>Standard Case Investigation Process</h2>
+        <p>A step-by-step interactive workflow of how criminal cases are processed from preliminary reports to court prosecution.</p>
+      </div>
+
+      <div class="workflow-visualizer">
+        <div class="workflow-steps" id="workflow-steps-nav">
+          <!-- Dynamically populated -->
+        </div>
+
+        <div class="workflow-display-card" id="workflow-detail-display">
+          <!-- Dynamically populated -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: e-Services & Interactive Simulators -->
+    <section id="services" class="portal-section">
+      <div class="section-header">
+        <h2>Administrative & Public e-Services</h2>
+        <p>Interactive self-service modules for citizens and partner enforcement agencies.</p>
+      </div>
+
+      <div class="services-tabs">
+        <button class="tab-btn active" data-tab="tab-good-conduct">
+          <i data-lucide="file-badge"></i> Good Conduct Verification
+        </button>
+        <button class="tab-btn" data-tab="tab-tip-line">
+          <i data-lucide="user-x"></i> Anonymous Tip Line (Fichua)
+        </button>
+        <button class="tab-btn" data-tab="tab-interpol">
+          <i data-lucide="globe"></i> INTERPOL Red Notices
+        </button>
+      </div>
+
+      <div class="tab-contents">
+        <!-- Tab 1: Good Conduct Tracker Simulator -->
+        <div class="tab-pane active" id="tab-good-conduct">
+          <div class="service-card">
+            <h3>eCitizen Police Clearance Certificate Tracker</h3>
+            <p>Simulate tracking the status of a Police Clearance Certificate (Certificate of Good Conduct).</p>
+            <form id="pcc-form" class="form-group-inline">
+              <input type="text" id="pcc-ref" placeholder="Enter Reference Code (e.g., PCC-2026-8971)" required>
+              <button type="submit" class="btn btn-primary"><i data-lucide="search"></i> Check Status</button>
+            </form>
+            <div id="pcc-result" class="status-result-box hidden"></div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Anonymous Tip Submission -->
+        <div class="tab-pane" id="tab-tip-line">
+          <div class="service-card">
+            <h3>Fichua Kwa DCI - Cryptographic Anonymous Incident Submission</h3>
+            <p>Safely report illicit activities directly to the Crime Research & Intelligence Bureau (CRIB). No personal data is stored.</p>
+            <form id="tip-form">
+              <div class="form-row">
+                <div class="form-col">
+                  <label for="crime-category">Incident Category</label>
+                  <select id="crime-category" required>
+                    <option value="">Select Category...</option>
+                    <option value="cybercrime">Cybercrime / Financial Fraud</option>
+                    <option value="narcotics">Narcotics / Drug Trafficking</option>
+                    <option value="terrorism">Extremism / Violent Radicalization</option>
+                    <option value="corruption">Land / Document Forgery</option>
+                    <option value="homicide">Violent Crime / Kidnapping</option>
+                  </select>
+                </div>
+                <div class="form-col">
+                  <label for="county-location">County Location</label>
+                  <input type="text" id="county-location" placeholder="e.g., Nairobi, Mombasa, Nakuru" required>
+                </div>
+              </div>
+              <div class="form-col">
+                <label for="tip-details">Incident Details & Observations</label>
+                <textarea id="tip-details" rows="4" placeholder="Provide accurate descriptions, vehicle registration numbers, or digital handles..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary"><i data-lucide="send"></i> Submit Encrypted Tip</button>
+            </form>
+            <div id="tip-result" class="status-result-box hidden"></div>
+          </div>
+        </div>
+
+        <!-- Tab 3: INTERPOL Red Notices -->
+        <div class="tab-pane" id="tab-interpol">
+          <div class="service-card">
+            <h3>INTERPOL Nairobi - High-Priority Fugitive Database</h3>
+            <p>Active international arrest warrants and fugitive notices coordinated through NCB Nairobi.</p>
+            <div class="interpol-grid" id="interpol-grid">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <i data-lucide="shield"></i>
+        <div>
+          <h4>Directorate of Criminal Investigations</h4>
+          <p>Mazingira Complex, Kiambu Road, P.O. Box 30036-00100 Nairobi</p>
+        </div>
+      </div>
+      <div class="footer-copy">
+        <p>&copy; 2026 Republic of Kenya — National Police Service. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
